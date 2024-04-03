@@ -1,12 +1,20 @@
 import React from 'react'
 import './App.css'
-import { Outlet } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom'
+import Register from './components/Register'
+import Login  from './components/Login'
+import UserTable from './components/UserTable'
 
 
 const App = () => {
   return (
     <div>
-      <Outlet />
+      <Routes>
+        <Route path='/' element={<Register />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/users' element={<UserTable /> } />
+        
+    </Routes>
     </div>
   )
 }

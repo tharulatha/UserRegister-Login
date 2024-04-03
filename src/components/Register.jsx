@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Register() {
@@ -9,19 +9,10 @@ function Register() {
     phonenumber: "",
     password: "",
   });
-    const [registerData, setRegisterData] = useState(() => {
-        const data = localStorage.getItem("users");
-
-        return JSON.parse(data)
- })
 
   const { firstname, lastname, email, phonenumber, password } = userInput;
-  const navigate = useNavigate();
-    useEffect(() => {
-        localStorage.setItem("users", JSON.stringify(registerData))
-    }, [registerData]);
 
-    console.log(registerData);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,7 +21,8 @@ function Register() {
 
   const handleSubmit = (e) => {
       e.preventDefault();
-      setRegisterData((prev) => ([...prev, {...userInput}]))
+    const usersData = JSON.parse(localStorage.getItem("users")) || [];
+    localStorage.setItem("users", JSON.stringify([...usersData, userInput]));
     alert("Registered Successfully");
     navigate("/login");
   };
