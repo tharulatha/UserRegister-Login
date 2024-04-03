@@ -20,7 +20,7 @@ function Register() {
   };
 
   const handleSubmit = (e) => {
-      e.preventDefault();
+    e.preventDefault();
     const usersData = JSON.parse(localStorage.getItem("users")) || [];
     localStorage.setItem("users", JSON.stringify([...usersData, userInput]));
     alert("Registered Successfully");
