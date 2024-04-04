@@ -14,7 +14,7 @@ function UserTable() {
         <button className="logout-btn" onClick={handleLogout}>Logout</button>
       </div>
       <div>
-      <h2 className="head">Users List</h2>
+        <h2 className="head">Users List</h2>
       <table>
         <thead>
           <tr>
