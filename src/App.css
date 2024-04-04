@@ -48,8 +48,38 @@
  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
  background-color: rgb(19, 78, 255);
 }
+
+ p{
+  font-size:14px;
+  text-align: end;
+  margin-right: 8px;
+  color: rgb(57, 57, 255);
+}
+
+.list-container{
+  margin: 0 5%;
+}
+
+.btn-group{
+display: flex;
+justify-content: end;
+} 
+
+.btn-group .logout-btn{
+  padding: 10px 15px; 
+  margin: 5px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+  background-color: rgb(19, 78, 255);
+}
+
+
+
 table{
   border-collapse: collapse;
+  width: 100%;
 }
 
 th{

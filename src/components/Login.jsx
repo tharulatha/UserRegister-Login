@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState} from "react";
+import { useNavigate, Link } from "react-router-dom";
 
 function Login() {
   const data = JSON.parse(localStorage.getItem("users")) || [];
-  console.log(data);
+
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   });
-    const navigate = useNavigate();
-
+  const navigate = useNavigate();
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setLoginData((prev) => ({ ...prev, [name]: value }));
@@ -56,6 +56,7 @@ function Login() {
           <button className="btn">LOGIN</button>
         </div>
       </form>
+      <Link to={'/'} ><p>Don't have an account? Register</p></Link>
     </div>
   );
 }

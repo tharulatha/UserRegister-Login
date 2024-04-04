@@ -1,10 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function UserTable() {
   const users = JSON.parse(localStorage.getItem("users")) || [];
-
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    alert("Logout Successfully");
+    navigate('/login');
+  }
   return (
-    <div>
+    <div className="list-container" >
+      <div className="btn-group">
+        <button className="logout-btn" onClick={handleLogout}>Logout</button>
+      </div>
+      <div>
       <h2 className="head">Users List</h2>
       <table>
         <thead>
@@ -28,6 +37,7 @@ function UserTable() {
           })}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }
